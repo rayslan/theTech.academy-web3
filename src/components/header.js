@@ -5,19 +5,34 @@ import { Link } from 'gatsby'
 import { HeaderNav, Logo, Menu } from "../styles/headerStyles"
 import { Container, Flex } from '../styles/globalStyles'
 
-import { useGlobalStateContext } from '../context/globalContext'
+import { useGlobalStateContext, useDispatchStateContext } from '../context/globalContext'
 
 
 
 const Header = () => {
+    const dispatch = useDispatchStateContext()
     const {currentTheme} = useGlobalStateContext()
+
+        const toggleTheme = () => {
+            if(currentTheme === 'dark') {
+                dispatch({type: 'TOGGLE_THEME', theme: 'light'})
+            } else {
+                dispatch({type: 'TOGGLE_THEME', theme: 'dark'})
+            }
+
+
+
+        }
+
+
+
     return <HeaderNav>
         <Container /*fluid*/>
             {console.log(currentTheme)}
             <Flex spaceBetween noHeight>
                 <Logo>
                     <Link to="/">[theTech</Link>
-                    <span></span>
+                    <span onClick={toggleTheme}></span>
                     <Link to="/">academy]</Link>
                     
 
