@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Link } from 'gatsby'
 
 //  styles components
@@ -6,6 +6,7 @@ import { HeaderNav, Logo, Menu } from "../styles/headerStyles"
 import { Container, Flex } from '../styles/globalStyles'
 
 import { useGlobalStateContext, useDispatchStateContext } from '../context/globalContext'
+// import { useEffect } from 'react'
 
 
 
@@ -19,10 +20,11 @@ const Header = () => {
             } else {
                 dispatch({type: 'TOGGLE_THEME', theme: 'dark'})
             }
-
-
-
         }
+
+        useEffect (() => {
+            window.localStorage.setItem("theme", currentTheme)
+        }, [currentTheme])
 
 
 
