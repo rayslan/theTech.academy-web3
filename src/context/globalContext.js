@@ -21,7 +21,7 @@ const globalReducer = (state, action) => {
 
 export const GlobalProvider = ({children}) => {
     const [state, dispatch] = useReducer(globalReducer, {
-        currentTheme: 'light'
+        currentTheme: 'dark'
     })
     return (
         <GlobalDispatchContext.Provider value={dispatch}>
