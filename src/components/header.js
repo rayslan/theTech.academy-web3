@@ -5,11 +5,15 @@ import { Link } from 'gatsby'
 import { HeaderNav, Logo, Menu } from "../styles/headerStyles"
 import { Container, Flex } from '../styles/globalStyles'
 
+import { useGlobalStateContext } from '../context/globalContext'
+
 
 
 const Header = () => {
+    const {currentTheme} = useGlobalStateContext()
     return <HeaderNav>
         <Container /*fluid*/>
+            {console.log(currentTheme)}
             <Flex spaceBetween noHeight>
                 <Logo>
                     <Link to="/">[theTech</Link>

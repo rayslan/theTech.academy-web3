@@ -9,6 +9,9 @@ import { normalize } from "styled-normalize"
 // components
 import Header from "./header"
 
+// context
+import { useGlobalStateContext } from '../context/globalContext'
+
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
@@ -49,15 +52,17 @@ const Layout = ({ children }) => {
     const darkTheme = {
       background: '#645394',
       text: '#e2eaeb',
-      peach: "#f0ede3"
+      peach: "#e6ddc5"
     }
     const lightTheme = {
       background: '#e2eaeb',
       text: '#645394'
     }
 
+    const {currentTheme} = useGlobalStateContext()
+
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={currentTheme === "dark" ? darkTheme : lightTheme}>
       <GlobalStyle/>
       <Header />
       <main>{children}</main>
