@@ -52,11 +52,12 @@ const Layout = ({ children }) => {
     const darkTheme = {
       background: '#645394',
       text: '#e2eaeb',
-      peach: "#e6ddc5"
+      turquoise: "#45B8AC"
     }
     const lightTheme = {
       background: '#e2eaeb',
-      text: '#645394'
+      text: '#645394',
+      turquoise: "#45B8AC"
     }
 
     const {currentTheme} = useGlobalStateContext()

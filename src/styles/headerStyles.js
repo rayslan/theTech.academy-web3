@@ -20,7 +20,7 @@ export const Logo = styled.div`
     span {
         height: 0.5rem;
         width: 0.5rem;
-        background: ${props => props.theme.peach};
+        background: ${props => props.theme.turquoise};
         margin: 0 4px;
         border-radius: 100%;
         display: inline-block;
