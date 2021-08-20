@@ -6,6 +6,9 @@ import { useStaticQuery, graphql } from "gatsby"
 import { createGlobalStyle, ThemeProvider } from "styled-components"
 import { normalize } from "styled-normalize"
 
+// components
+import Header from "./header"
+
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
@@ -45,7 +48,8 @@ const Layout = ({ children }) => {
 
     const darkTheme = {
       background: '#645394',
-      text: '#e2eaeb'
+      text: '#e2eaeb',
+      peach: "#f0ede3"
     }
     const lightTheme = {
       background: '#e2eaeb',
@@ -55,6 +59,7 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={darkTheme}>
       <GlobalStyle/>
+      <Header />
       <main>{children}</main>
     </ThemeProvider>
   ) 
