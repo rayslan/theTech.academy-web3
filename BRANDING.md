@@ -3,9 +3,9 @@
 ----------------------------------
 BRANDING COLORS:
 
-#645394 - rgb (100, 83, 148) - violet
-#e2eaeb - rgb (226, 234, 235) - soft green
-#45B8AC - rgb (69, 184, 172) - turquoise
+#645394  - violet
+#e2eaeb  - soft green
+#00C6B2  - turquoise
 ------------------------------------
 
 ```
