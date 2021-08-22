@@ -37,9 +37,9 @@ const Header = () => {
             
             <Flex spaceBetween noHeight>
                 <Logo>
-                    <Link to="/">[theTech</Link>
+                    <Link to="/">[ theTech</Link>
                     <span onClick={toggleTheme}></span>
-                    <Link to="/">academy]</Link>
+                    <Link to="/">academy ]</Link>
                     
 
 
