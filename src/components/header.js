@@ -5,13 +5,13 @@ import { Link } from 'gatsby'
 import { HeaderNav, Logo, Menu } from "../styles/headerStyles"
 import { Container, Flex } from '../styles/globalStyles'
 
-import { useGlobalStateContext, useDispatchStateContext } from '../context/globalContext'
+import { useGlobalStateContext, useGlobalDispatchContext } from '../context/globalContext'
 // import { useEffect } from 'react'
 
 
 
-const Header = () => {
-    const dispatch = useDispatchStateContext()
+const Header = ({onCursor}) => {
+    const dispatch = useGlobalDispatchContext()
     const {currentTheme} = useGlobalStateContext()
 
         const toggleTheme = () => {
@@ -36,9 +36,15 @@ const Header = () => {
         <Container /*fluid*/>
             
             <Flex spaceBetween noHeight>
-                <Logo>
+                <Logo 
+                onMouseEnter={() => onCursor("hovered")}
+                onMouseLeave={onCursor}
+                >
                     <Link to="/">[ theTech</Link>
-                    <span onClick={toggleTheme}></span>
+                    <span onClick={toggleTheme}
+                    onMouseEnter={() => onCursor("pointer")}
+                    onMouseLeave={onCursor}
+                    ></span>
                     <Link to="/">academy ]</Link>
                     
 
