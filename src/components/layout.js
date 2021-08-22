@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
   html {
         box-sizing: border-box;
         -webkit-font-smoothing: antialiased;
-        font-size: 16px;
+        font-size: 18px;
     }
 
   body {
