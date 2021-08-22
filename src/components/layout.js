@@ -8,6 +8,7 @@ import { normalize } from "styled-normalize"
 
 // components
 import Header from "./header"
+import { Cursor } from "../styles/globalStyles"  /* !!!!!!!!!!!!!!!!!!!!!*/
 
 // context
 import { useGlobalStateContext } from '../context/globalContext'
@@ -65,6 +66,7 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={currentTheme === "dark" ? darkTheme : lightTheme}>
       <GlobalStyle/>
+      <Cursor/>
       <Header />
       <main>{children}</main>
     </ThemeProvider>
