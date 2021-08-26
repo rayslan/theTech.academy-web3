@@ -1,37 +1,35 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState, useRef } from "react"
+//Context
+import { useGlobalStateContext } from "../context/globalContext"
+// Styled Components
 import { Cursor } from "../styles/globalStyles"
 
-// Context
-import { useGlobalStateContext } from '../context/globalContext' /* !!!!!!!!!!!!!!!!!!!!!!*/
+const CustomCursor = ({ toggleMenu }) => {
+  const { cursorType } = useGlobalStateContext()
+  const cursor = useRef(null);
 
+  const onMouseMove = event => {
+    const { clientX, clientY } = event
+    cursor.current.style.left = `${clientX}px`;
+    cursor.current.style.top = `${clientY}px`;
+  }
 
-const CustomCursor = () => {
-    const { cursorType } = useGlobalStateContext()
-    const [mousePosition, setMousePosition] = useState({
-        x: 400,
-        y: 400,
-    })
-
-    const onMouseMove = event => {
-        const { pageX: x, pageY: y } = event;
-        setMousePosition({ x, y})
+  useEffect(() => {
+    document.addEventListener("mousemove", onMouseMove)
+    return () => {
+      document.removeEventListener("mousemove", onMouseMove)
     }
-
-    useEffect(() => {
-        document.addEventListener("mousemove", onMouseMove)
-        return () => {
-            document.removeEventListener("mousemove", onMouseMove)
-        }
-    }, [])
-    
-    return (
-        <div>
-            <Cursor 
-                className={`${!!cursorType ? 'hovered': ''} ${cursorType}`}
-                style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}
-            />
-        </div>
-    )
+  }, [])
+  return (
+    <>
+      <Cursor
+        className={`${!!cursorType ? "hovered" : ""} ${cursorType} ${
+          toggleMenu ? "nav-open" : ""
+        }`}
+        ref = {cursor}
+      />
+    </>
+  )
 }
 
 export default CustomCursor

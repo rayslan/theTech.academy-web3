@@ -17,7 +17,7 @@ const HomeBanner = ({ onCursor }) => {
   const { currentTheme } = useGlobalStateContext()
   let canvas = useRef(null)
   useEffect(() => {
-    let renderingElement = canvas.current;
+    let renderingElement = canvas.current
     // create an offscreen canvas only for the drawings
     let drawingElement = renderingElement.cloneNode()
     let drawingCtx = drawingElement.getContext("2d")
@@ -28,7 +28,7 @@ const HomeBanner = ({ onCursor }) => {
 
     renderingCtx.globalCompositeOperation = "source-over"
     renderingCtx.fillStyle = currentTheme === "dark" ? "#000000" : "#ffffff"
-    renderingCtx.fillRect = (0, 0, size.width, size.height)
+    renderingCtx.fillRect(0, 0, size.width, size.height)
 
     renderingElement.addEventListener("mouseover", ev => {
       moving = true
@@ -106,10 +106,8 @@ const HomeBanner = ({ onCursor }) => {
         onMouseLeave={onCursor}
       />
       <BannerTitle variants={container} initial="initial" animate="animate">
-      <Headline variants={item}>in 180 days</Headline>
-        <Headline variants={item}>become</Headline>
-        <Headline variants={item}>DevOps</Headline>
-        <Headline variants={item}>Engineer</Headline>
+        <Headline variants={item}>DIG</Headline>
+        <Headline variants={item}>DEEP</Headline>
       </BannerTitle>
     </Banner>
   )
