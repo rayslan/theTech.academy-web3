@@ -1,12 +1,10 @@
-```
-
 -----Install nvm------
 
 curl -sL https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh -o install_nvm.sh
 bash install_nvm.sh
 source ~/.profile
-nvm install 16
-nvm use 16
+nvm install 13
+nvm use 13
 
 -----Spawn error fixer-----
 
@@ -26,7 +24,7 @@ sudo sysctl -p
 ------Instal npm dependencies-----
 
 npm install
-npm install -g gatsby-plugin-manifest@2.4.37 gatsby-remark-images@3.3.40
+npm install gatsby-plugin-manifest@2.4.37 gatsby-remark-images@3.3.40
 npm i -g gatsby-plugin-layout
 npm i -g npm-upgrade
 npm-upgrade
@@ -39,4 +37,3 @@ npm run start
 
 open http://localhost:8000
 
-```
